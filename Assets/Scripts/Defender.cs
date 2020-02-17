@@ -11,4 +11,9 @@ public class Defender : MonoBehaviour
     {
         FindObjectOfType<StarsDisplay>().AddStars(amount);
     }
+
+    public int GetStarCost()
+    {
+        return cost;
+    }
 }
