@@ -11,23 +11,25 @@ public class Shooter : MonoBehaviour
     GameObject gun;
 
     AttackerSpawner myLaneSpawner;
+    Animator animator;
 
     float gap = 0.2f;
 
     void Start()
     {
         SetLaneSpawner();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
         if(IsAttackerInLane())
         {
-            Debug.Log("Shoot");
+            animator.SetBool("IsAttacking", true);
         }
         else
         {
-            Debug.Log("Idle");
+            animator.SetBool("IsAttacking", false);
         }
     }
 

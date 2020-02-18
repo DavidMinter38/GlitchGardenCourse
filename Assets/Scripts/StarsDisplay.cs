@@ -7,7 +7,7 @@ public class StarsDisplay : MonoBehaviour
 {
 
     [SerializeField]
-    int stars = 100;
+    int stars = 200;
 
     Text starsText;
 
