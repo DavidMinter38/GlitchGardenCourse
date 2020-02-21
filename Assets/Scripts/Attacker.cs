@@ -9,6 +9,9 @@ public class Attacker : MonoBehaviour
 
     GameObject currentTarget;
 
+    [SerializeField]
+    int damage = 1;
+
     // Update is called once per frame
     void Update()
     {
@@ -43,5 +46,10 @@ public class Attacker : MonoBehaviour
         {
             health.InflictDamage(damage);
         }
+    }
+
+    public int GetDamage()
+    {
+        return damage;
     }
 }
