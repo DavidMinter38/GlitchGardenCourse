@@ -12,7 +12,17 @@ public class Attacker : MonoBehaviour
     [SerializeField]
     int damage = 1;
 
-    // Update is called once per frame
+    void Awake()
+    {
+        FindObjectOfType<LevelController>().SpawnAttacker();
+    }
+
+    void OnDestroy()
+    {
+        FindObjectOfType<LevelController>().KillAttacker();
+    }
+
+
     void Update()
     {
         transform.Translate(Vector2.left * currentSpeed * Time.deltaTime);
