@@ -8,6 +8,9 @@ public class LevelController : MonoBehaviour
     GameObject winBanner;
 
     [SerializeField]
+    GameObject loseBanner;
+
+    [SerializeField]
     float timeToWait = 4f;
 
     int remainingAttackers = 0;
@@ -16,6 +19,7 @@ public class LevelController : MonoBehaviour
     void Start()
     {
         winBanner.SetActive(false);
+        loseBanner.SetActive(false);
     }
 
     public void SpawnAttacker()
@@ -38,6 +42,12 @@ public class LevelController : MonoBehaviour
         GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(timeToWait);
         FindObjectOfType<LevelLoad>().LoadNextScene();
+    }
+
+    public void HandleLoseCondition()
+    {
+        loseBanner.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void TimerFinished()
