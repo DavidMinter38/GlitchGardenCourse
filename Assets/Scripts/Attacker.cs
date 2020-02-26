@@ -44,6 +44,10 @@ public class Attacker : MonoBehaviour
     public void SetMovementSpeed(float speed)
     {
         currentSpeed = speed;
+        if(currentSpeed != 0)
+        {
+            currentSpeed *= 0.8f + (PlayerPrefsController.GetDifficulty() * 0.2f);
+        }
     }
 
     public void Attack(GameObject target)

@@ -22,7 +22,7 @@ public class DefenderSpawner : MonoBehaviour
     private void AttemptToPlaceDefender()
     {
         var starsDisplay = FindObjectOfType<StarsDisplay>();
-        int defenderCost = defender.GetStarCost();
+        float defenderCost = defender.GetStarCost() * (0.8f + (PlayerPrefsController.GetDifficulty() * 0.2f));
         if(starsDisplay.HaveEnoughStars(defenderCost))
         {
             SpawnDefender();

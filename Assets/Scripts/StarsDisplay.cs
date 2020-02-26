@@ -7,7 +7,7 @@ public class StarsDisplay : MonoBehaviour
 {
 
     [SerializeField]
-    int stars = 200;
+    float stars = 200;
 
     Text starsText;
 
@@ -22,18 +22,18 @@ public class StarsDisplay : MonoBehaviour
         starsText.text = stars.ToString();
     }
 
-    public bool HaveEnoughStars(int amount)
+    public bool HaveEnoughStars(float amount)
     {
         return stars >= amount;
     }
 
-    public void AddStars(int amount)
+    public void AddStars(float amount)
     {
         stars += amount;
         UpdateDisplay();
     }
 
-    public void RemoveStars(int amount)
+    public void RemoveStars(float amount)
     {
         if(stars >= amount)
         {

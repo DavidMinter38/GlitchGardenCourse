@@ -10,6 +10,7 @@ public class DamageCollider : MonoBehaviour
         if (theObject.GetComponent<Attacker>())
         {
             FindObjectOfType<LivesDisplay>().ReduceLives(theObject.GetComponent<Attacker>().GetDamage());
+            Destroy(theObject);
         }
     }
 }
