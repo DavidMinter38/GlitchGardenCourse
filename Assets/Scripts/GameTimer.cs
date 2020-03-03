@@ -7,7 +7,7 @@ public class GameTimer : MonoBehaviour
 {
     [Tooltip("The amount of time a level lasts for in seconds.")]
     [SerializeField]
-    float levelTime = 10;
+    float levelTime = 30;
     bool triggerFinish = false;
 
     void Update()
